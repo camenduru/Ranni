@@ -27,8 +27,8 @@ H, W = 768, 768
 # - base llama model
 # llama = LlamaForCausalLM.from_pretrained('models/llama2_7b_chat').cuda()  # load locally
 # llama_tokenizer = AutoTokenizer.from_pretrained('models/llama2_7b_chat')  # load locally
-llama = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-7b-chat-hf").cuda()
-llama_tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
+llama = AutoModelForCausalLM.from_pretrained("4bit/Llama-2-7b-chat-hf").cuda()
+llama_tokenizer = AutoTokenizer.from_pretrained("4bit/Llama-2-7b-chat-hf")
 llama_tokenizer.pad_token_id = (0)
 
 # - lora
