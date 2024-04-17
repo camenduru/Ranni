@@ -13,18 +13,15 @@ from ranni.ddim_hacked import DDIMSampler
 from ldm.util import instantiate_from_config
 from utils import build_llama_prompt, chat, element_template, box_template, seq_to_element, seq_to_element_v2, seq_to_box, box_to_seq, draw_box
 
-
 parser = argparse.ArgumentParser()
 parser.add_argument("--config-path", type=str, default='config/ranni_sdv21_v1.yaml')
 args = parser.parse_args()
-
 
 # global values
 global layouts, edit_mask, intermediates
 edit_mask = None
 intermediates = None
 H, W = 768, 768
-
 
 ### txt2panel
 # - base llama model
@@ -345,4 +342,4 @@ with block:
     )
 
 
-block.launch(server_name='0.0.0.0')
+block.launch(server_name='0.0.0.0', share=True)
